@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                Word Count
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input [(ngModel)]="words">
+            </td>
+            <td>
+                <!-- call getWordCount function and pass words parameter on button click-->
+                <button type="button">Count</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <!-- Show total number of count -->
+                Total Number of Words is: 
+            </td>
+        </tr>
+    </tbody>
+</table>
