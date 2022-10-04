@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WordCountService } from '../word-count.service';
 
 @Component({
     selector: 'app-word-count',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WordCountComponent implements OnInit {
 
-    words: string = '';
-    count: number = 0;
+    words : string = '';
+    count : number = 0;
+    countResult : Object = {}
 
-    constructor() {
+    constructor(private wordCountService: WordCountService) {
         try {
             
         } catch (error) {
@@ -24,8 +26,16 @@ export class WordCountComponent implements OnInit {
     getWordCount(words: string) {
         try {
             // write code to call wordCount service
-            // get response and store response in count             
-            
+            // get response and store response in count    
+            const param = {
+                "words": words
+            };
+
+            this.wordCountService.getCount(param)
+            .subscribe( 
+                (res) => {
+                    this.countResult = res;
+            });
 
         } catch (error) {   
 

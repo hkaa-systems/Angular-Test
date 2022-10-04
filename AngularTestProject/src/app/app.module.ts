@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WordCountComponent } from './word-count/word-count.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
+import { WordCountService } from './word-count.service';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,11 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    // FormsModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [WordCountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
